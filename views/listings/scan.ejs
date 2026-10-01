@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="scan-box">
+  <h1>Upload a plant photo</h1>
+  <p class="muted">Add a clear photo of the leaf or plant</p>
+
+  <label class="drop" for="photo">
+    <span>Tap here to choose a photo</span>
+    <input type="file" id="photo" accept="image/*" hidden>
+  </label>
+
+  <div id="preview" class="preview" hidden>
+    <img id="previewImg" alt="Selected plant photo">
+    <span id="fileName"></span>
+  </div>
+
+  <p id="error" class="error" hidden>Please select a plant photo first.</p>
+  <button id="analyzeBtn" class="btn btn-primary btn-lg">Analyze plant</button>
+</main>
+
+<script src="/js/scan.js"></script>

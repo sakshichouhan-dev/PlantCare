@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="result-box">
+  <h1><%= result.plantName %></h1>
+  <p class="muted"><%= result.scientificName %></p>
+
+  <div class="health">
+    <span>Health status:</span>
+    <strong><%= result.health %></strong>
+  </div>
+
+  <div class="fert-card">
+    <h2>Recommended fertilizer</h2>
+    <h3><%= result.fertilizer.name %></h3>
+    <p>Rs <%= result.fertilizer.price %></p>
+    <button class="btn btn-primary">Add to cart</button>
+  </div>
+
+  <a href="/scan" class="btn">Scan another plant</a>
+</main>
