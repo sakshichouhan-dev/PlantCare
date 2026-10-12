@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="cart-box">
+  <h1>Your cart</h1>
+
+  <% items.forEach(item => { %>
+    <div class="cart-row">
+      <div>
+        <strong><%= item.name %></strong>
+        <p class="muted">Qty: <%= item.qty %></p>
+      </div>
+      <span>Rs <%= item.price * item.qty %></span>
+    </div>
+  <% }) %>
+
+  <div class="cart-total">
+    <strong>Total</strong>
+    <strong>Rs <%= total %></strong>
+  </div>
+
+  <a href="/order-success" class="btn btn-primary btn-lg">Place order</a>
+</main>

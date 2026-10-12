@@ -61,13 +61,36 @@ app.get("/signup", (req, res) => {
 
 // Shop route
 app.get("/shop", (req, res) => {
-  res.send("Shop page coming soon");
+  const products = [
+    { id: 1, name: "Nitrogen mix", price: 299, info: "For leafy plants" },
+    { id: 2, name: "Organic compost", price: 199, info: "For all plants" },
+    { id: 3, name: "Bloom booster", price: 349, info: "For flowering plants" },
+    { id: 4, name: "Root strength", price: 249, info: "For young plants" },
+  ];
+  res.render("listings/shop", { products });
 });
 
 
 // About route
 app.get("/about", (req, res) => {
-  res.send("About page coming soon");
+  res.render("listings/about");
+});
+
+
+//cart route
+app.get("/cart", (req, res) => {
+  const items = [
+    { name: "Nitrogen mix", price: 299, qty: 1 },
+    { name: "Organic compost", price: 199, qty: 2 },
+  ];
+  const total = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+  res.render("listings/cart", { items, total });
+});
+
+
+//order-success route
+app.get("/order-success", (req, res) => {
+  res.render("listings/order-success");
 });
 
 app.listen(8080, () =>{

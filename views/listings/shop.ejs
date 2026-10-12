@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="shop-box">
+  <h1>Fertilizers</h1>
+
+  <div class="shop-grid">
+    <% products.forEach(p => { %>
+      <div class="product-card">
+        <div class="product-img">🌱</div>
+        <h3><%= p.name %></h3>
+        <p class="muted"><%= p.info %></p>
+        <p><strong>Rs <%= p.price %></strong></p>
+        <a href="/cart" class="btn btn-primary">Add to cart</a>
+      </div>
+    <% }) %>
+  </div>
+</main>
